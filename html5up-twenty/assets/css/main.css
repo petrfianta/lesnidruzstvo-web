@@ -1813,7 +1813,7 @@ input, select, textarea {
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		textarea:focus {
-			border-color: #83d3c9;
+			border-color: #2e7d32;
 		}
 
 	input[type="text"],
