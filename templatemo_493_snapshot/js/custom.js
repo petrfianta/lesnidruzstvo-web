@@ -33,13 +33,16 @@ $(document).ready(function() {
   $(function() {
     $('body').vegas({
         slides: [
-            { src: 'images/slide-img1.jpg' },
-            { src: 'images/slide-img2.jpg' },
-            { src: 'images/slide-img3.jpg' }
+            // ZDE JE JEN JEDNA FOTKA
+            { src: 'images/stan1.jpg' },
+            { src: 'images/stan1.jpg' }
         ],
-        timer: false,
-        transition: [ 'zoomIn', ],
-        animation: ['kenburns']
+        // Nastavení efektů
+        timer: false,          // Vypne časovou lištu (není potřeba pro 1 fotku)
+        transition: [ 'fade' ], // Typ přechodu (při načtení)
+        transitionDuration: 2000,
+        animation: [ 'kenburns' ], // TOTO JE TEN EFEKT (pomalé přibližování)
+        delay: 10000,            // Rychlost animace
     });
   });
 

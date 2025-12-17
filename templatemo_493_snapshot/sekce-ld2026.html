@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow"> 
+    <link rel="icon" type="image/png" href="images/icon2-big.png">
+    <title>Členská sekce | LD Uherský Ostroh</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+
+    <style>
+        body {
+            font-family: "Source Sans Pro", sans-serif;
+            background-color: #f9f9f9;
+            color: #304352;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- OPRAVA TLAČÍTKA (Extra silná specifikace) --- */
+        /* Musíme přebít výchozí styl Bootstrap menu */
+        .navbar-default .navbar-nav > li > a.logout-btn {
+            background-color: #304352 !important; /* Tmavé pozadí */
+            color: #ffffff !important;            /* Bílé písmo */
+            border: none;
+            padding: 10px 25px !important;
+            border-radius: 4px;
+            font-weight: 900 !important;          /* Extra tučné */
+            text-transform: uppercase;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            margin-top: 5px;
+            display: inline-block;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            opacity: 1 !important;
+        }
+
+        /* Hover efekt pro tlačítko */
+        .navbar-default .navbar-nav > li > a.logout-btn:hover {
+            background-color: #2e7d32 !important; /* ZELENÁ */
+            color: #ffffff !important;            /* Stále bílá */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+        }
+
+        /* --- OPRAVA FACEBOOK IKONY (Jako na hlavní stránce) --- */
+        .social-icon {
+            padding: 0;
+            margin: 0;
+        }
+        .social-icon li {
+            display: inline-block;
+            list-style: none;
+        }
+        .social-icon li a {
+            border: 1px solid #fff;       /* Bílý rámeček */
+            color: #fff;                  /* Bílá ikona */
+            border-radius: 4px;           /* Mírně zaoblené rohy (ne kolečko) */
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            display: inline-block;
+            text-align: center;
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .social-icon li a:hover {
+            background-color: #2e7d32;    /* Zelená výplň */
+            border-color: #2e7d32;        /* Zelený rámeček */
+            color: #ffffff;
+        }
+
+        /* Hlavní obsah */
+        #about {
+            flex: 1;
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+
+        h1 { font-size: 36px; font-weight: bold; color: #304352; margin-bottom: 10px; }
+        h3 { font-size: 24px; font-weight: bold; color: #2e7d32; margin-bottom: 20px; margin-top: 30px; }
+        p { font-size: 18px; line-height: 1.6; color: #555; }
+
+        /* Oznamovací box */
+        .notice-box {
+            background: #ffffff;
+            padding: 30px;
+            border-left: 6px solid #2e7d32;
+            border-radius: 4px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Patička */
+        footer {
+            background: #304352;
+            color: #fff;
+            padding: 20px 0;
+        }
+        
+        .footer-link {
+            color: #ccc;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover { color: #2e7d32; }
+
+        @media (max-width: 768px) {
+            .navbar-brand img { height: 40px !important; margin-top: -5px !important; }
+        }
+    </style>
+</head>
+
+<body id="top">
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation"
+         style="width: 100%; background-color: #ffffff; border-bottom: 3px solid #304352; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+            <div class="navbar-header">
+                <a href="#" class="navbar-brand" style="padding: 13px 0px;">
+                     <img src="images/logo2-bg.png" alt="Lesní družstvo" style="height: 55px; width: auto; margin-top: -15px;">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html" class="logout-btn">Odhlásit se</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section id="about">
+        <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+            
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="section-title">
+                        <h1>Interní sekce pro členy</h1>
+                        <p style="margin-top: 10px;">Vítejte v členské zóně.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 50px;">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="notice-box">
+                        <h3 style="margin-top: 0; display: flex; align-items: center;">
+                            <i class="fa fa-bullhorn" style="margin-right: 15px;"></i> Aktuální oznámení
+                        </h3>
+                        <div style="margin-top: 20px;">
+                            <p style="margin-bottom: 0; color: #777; font-style: italic;">
+                                V současné době pro vás nemáme žádná nová oznámení.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <h3><i class="fa fa-folder-open-o" style="margin-right: 10px;"></i> Dokumenty ke stažení</h3>
+                    
+                    <p style="color: #777; font-style: italic; margin-top: 10px;">
+                        Zatím zde nejsou žádné dokumenty ke stažení.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 text-center">
+                    
+                    <ul class="social-icon" style="margin-bottom: 5px;">
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61553352934307" class="fa fa-facebook"></a>
+                        </li>
+                    </ul>
+
+                    <p style="margin: 0; margin-top: 0; line-height: 1.6;">
+                        Copyright © 2025 Lesní družstvo pro Uh. Ostroh a okolí |
+                        <span style="font-size: 0.8em; opacity: 0.6;"> Design: Templatemo & PF</span>
+                        <br />
+                        <a href="gdpr.html" class="footer-link">Ochrana osobních údajů</a>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

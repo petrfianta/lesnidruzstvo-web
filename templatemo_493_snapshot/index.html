@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="">
+  <meta name="description" content="Lesní družstvo pro Uherský Ostroh zajišťuje udržitelnou péči o les, prodej palivového dřeva a pronájem areálu pro společenské akce.">
+  <link rel="icon" type="image/png" href="images/icon2-big.png">
 
-	<title>Snapshot HTML CSS Web Template</title>
-<!--
+  <title>Lesní družstvo pro Uh. Ostroh a okolí</title>
+  <!--
 Snapshot Template
 http://www.templatemo.com/tm-493-snapshot
 
@@ -19,34 +21,314 @@ https://vegas.jaysalvat.com/
 Caption Hover Effects
 http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
 -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-  	<link rel="stylesheet" href="css/component.css">
-	
-    <link rel="stylesheet" href="css/owl.theme.css">
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/vegas.min.css">
-	<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/component.css">
 
-	<!-- Google web font  -->
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
-	
+  <link rel="stylesheet" href="css/owl.theme.css">
+  <link rel="stylesheet" href="css/owl.carousel.css">
+  <link rel="stylesheet" href="css/vegas.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google web font  -->
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+
+  <style>
+    /* Zúžení mezer v menu */
+    .navbar-nav li a {
+      padding-left: 15px !important;
+      padding-right: 15px !important;
+      color: #304352 !important;
+      font-weight: 700 !important;
+      font-size: 15px !important;
+      text-transform: uppercase;
+    }
+
+    .navbar-default .navbar-nav>li>a:hover {
+      color: #2e7d32 !important;
+    }
+
+    #sluzby .about-thumb {
+      background: #ffffff;
+      border-radius: 4px;
+      position: relative;
+      display: block;
+      width: 100%;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .btn-success {
+      background-color: #304352 !important;
+      /* Tmavá šedá */
+      border: 2px solid #304352 !important;
+      color: #ffffff !important;
+
+      /* Typografie - stejná jako v menu */
+      font-weight: 700 !important;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      /* Velikost a tvar */
+      padding: 15px 35px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    /* 2. EFEKT PO NAJETÍ - Zelené jako aktivní menu */
+    .btn-success:hover,
+    .btn-success:active {
+      background-color: #2e7d32 !important;
+      /* Lesní zelená */
+      border-color: #2e7d32 !important;
+      color: #ffffff !important;
+
+      /* Malý efekt nadzvednutí */
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Zvýraznění aktivního odkazu v menu */
+    body body {
+      position: relative;
+    }
+
+    /* Efekt pro galerii - jemné zvětšení při najetí myší */
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      /* Zvětší fotku o 5% */
+      opacity: 0.9;
+    }
+
+    /* --- 1. DEFINITIVNÍ OPRAVA CUKÁNÍ STRÁNKY --- */
+    /* Vynutíme, aby byl posuvník na stránce VŽDY. Tím pádem při otevření okna nic nezmizí a nic neuskočí. */
+    html {
+      overflow-y: scroll;
+    }
+
+    body,
+    body.modal-open {
+      padding-right: 0 !important;
+      /* Zakážeme Bootstrapu přidávat umělou mezeru */
+      overflow: visible !important;
+      /* Zakážeme Bootstrapu skrývat posuvník */
+    }
+
+    /* Zajistíme, aby neuskočilo horní menu */
+    .navbar-fixed-top {
+      padding-right: 0 !important;
+    }
+
+
+    /* --- 2. ODSTRANĚNÍ RÁMEČKU A POZADÍ KOLEM FOTKY --- */
+    /* Úplně "vykucháme" styl toho okna, aby zbyla jen čistá fotka */
+    #imageModal .modal-content,
+    #imageModal .modal-dialog {
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      -webkit-box-shadow: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-brand img {
+        height: 40px !important;
+        /* Na mobilu malé */
+        margin-top: -5px !important;
+        /* Menší posun */
+      }
+    }
+
+    .row-flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /* Na mobilech (pod 768px) chceme zase klasiku pod sebou, aby to neblblo */
+    @media (max-width: 767px) {
+        .row-flex {
+            display: block;
+        }
+    }
+
+    .go-top:hover {
+        background: #2e7d32 !important; /* Pouze při najetí zezelená */
+    }
+
+    /* 2. Sociální ikony (Facebook) */
+    .social-icon li a:hover {
+        background-color: #2e7d32 !important; /* Pouze při najetí zezelená */
+        border-color: #2e7d32 !important;
+        color: #ffffff !important;
+    }
+    
+    /* Zvětšení textů v sekci Kontakt */
+    #contact p, #contact div {
+        font-size: 18px !important;
+    }
+
+    #about p, 
+    #sluzby p, 
+    #contact div, 
+    #contact p, 
+    #contact a,
+    #contact span,
+    #contact strong {
+        font-size: 20px !important; /* Zvětšení na 18px */
+        line-height: 1.6 !important;
+    }
+    
+    /* Nadpisy v sekcích taky trochu zvětšíme */
+    h1 { font-size: 36px !important; }
+    h2 { font-size: 28px !important; }
+
+    .footer-link {
+        color: #ccc !important;
+        font-size: 13px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+        text-decoration: none !important;
+    }
+    .footer-link:hover {
+        color: #2e7d32 !important; /* Zelená při najetí */
+    }
+
+    .about-thumb {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+    }
+    /* Toto "vytlačí" spodní část (kontakt) až dolů */
+    .push-down {
+        margin-top: auto !important;
+    }
+
+    /* --- OPRAVA O DRUŽSTVU (Stejná výška sloupců) --- */
+    .row-eq-height {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    /* Na mobilu to zrušíme, aby byly pod sebou */
+    .row-middle {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    /* Levý sloupec: Obsah zarovnat doprava a vertikálně na střed, čára vpravo */
+    .col-left-aligned {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end; /* Zarovná obsah doprava k čáře */
+        border-right: 1px solid #ddd;
+        text-align: right;
+        padding-right: 40px; /* Odstup od čáry */
+    }
+    
+    /* Pravý sloupec: Obsah vertikálně na střed */
+    .col-right-aligned {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 40px; /* Odstup od čáry */
+    }
+
+    /* Na mobilu (pod 768px) to zrušíme a dáme pod sebe */
+    @media (max-width: 767px) {
+        .col-left-aligned {
+            border-right: none !important;
+            border-bottom: 1px solid #ddd; /* Místo svislé čáry vodorovná */
+            align-items: center !important; /* Na mobilu na střed */
+            text-align: center !important;
+            padding-right: 15px !important;
+            padding-bottom: 30px;
+            margin-bottom: 30px;
+        }
+        .col-right-aligned {
+            padding-left: 15px !important;
+            align-items: center !important;
+            text-align: center !important; /* Na mobilu text na střed */
+        }
+    }
+
+    /* --- FIX GALERIE (Všechny fotky stejně velké) --- */
+    .gallery-item > div {
+        height: 250px !important;   /* Pevná výška okénka */
+        width: 100% !important;
+    }
+    
+    .gallery-item img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important; /* ZÁZRAK: Ořízne fotku, aby vyplnila rám a nedeformovala se */
+        object-position: center !important;
+    }
+
+    .modal-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.3); /* Poloprůhledné pozadí */
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        z-index: 1050;
+        border-radius: 4px;
+        user-select: none;
+    }
+
+    .modal-nav-btn:hover {
+        background: rgba(46, 125, 50, 0.9); /* Zelená při najetí */
+        color: white;
+        text-decoration: none;
+    }
+
+    .modal-prev { left: 10px; }
+    .modal-next { right: 10px; }
+
+    /* Na mobilu šipky trochu zmenšíme */
+    @media (max-width: 768px) {
+        .modal-nav-btn { font-size: 25px; padding: 10px 15px; }
+    }
+
+    .sk-spinner-pulse {
+        background-color: #2e7d32 !important; /* Změna z růžové na zelenou */
+    }
+
+    /* Pokud by se vám zdálo písmo moc velké, můžete odkomentovat i tento řádek: */
+    /* .navbar-nav li a { font-size: 14px !important; } */
+  </style>
+
 </head>
+
 <body id="top" data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
 
-<!-- Preloader section -->
+  <!-- Preloader section -->
 
-<div class="preloader">
-     <div class="sk-spinner sk-spinner-pulse"></div>
-</div>
+  <div class="preloader">
+    <div class="sk-spinner sk-spinner-pulse"></div>
+  </div>
 
 
-<!-- Navigation section  -->
+  <!-- Navigation section  -->
 
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation"
+    style="width: 100%; background-color: #ffffff; border-bottom: 3px solid #304352; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+
+    <!--<div style="background-color: #d32f2f; color: white; text-align: center; padding: 12px; font-family: 'Source Sans Pro', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 1px; font-size: 14px;">
+    <i class="fa fa-exclamation-triangle" style="margin-right: 5px;"></i>
+    Aktuálně: Příjem objednávek na palivové dříví je z kapacitních důvodů POZASTAVEN.
+    </div>-->
+
+    <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
 
       <div class="navbar-header">
         <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -54,295 +336,485 @@ http://tympanus.net/codrops/2013/06/18/caption-hover-effects/
           <span class="icon icon-bar"></span>
           <span class="icon icon-bar"></span>
         </button>
-        <a href="#top" class="navbar-brand smoothScroll">Snapshot</a>
+        <a href="#top" class="navbar-brand smoothScroll" style="padding: 13px 0px;"><img src="images/logo2-bg.png"
+            alt="Lesní družstvo" style="height: 55px; width: auto; margin-top: -15px;"></a>
       </div>
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#top" class="smoothScroll"><span>Home</span></a></li>
-            <li><a href="#about" class="smoothScroll"><span>About</span></a></li>
-            <li><a href="#gallery" class="smoothScroll"><span>Gallery</span></a></li>
-            <li><a href="#contact" class="smoothScroll"><span>Contact</span></a></li>
-          </ul>
-       </div>
-
-    </div>
-  </div>
-
-
-<!-- Home section -->
-
-<section id="home">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-
-      <div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
-        <h1 class="wow fadeInUp" data-wow-delay="0.6s">Let's take a snapshot</h1>
-        <p class="wow fadeInUp" data-wow-delay="0.9s">Snapshot website template is available for free download. Anyone can modify and use it for any site. Please tell your friends about <a rel="nofollow" href="http://www.templatemo.com">templatemo</a>. Thank you.</p>
-        <a href="#about" class="smoothScroll btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.2s">Learn more</a>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#top" class="smoothScroll"><span>Úvod</span></a></li>
+          <li><a href="#about" class="smoothScroll"><span>O nás</span></a></li>
+          <li><a href="#sluzby" class="smoothScroll"><span>Služby</span></a></li>
+          <li><a href="#gallery" class="smoothScroll"><span>Galerie</span></a></li>
+          <li><a href="#contact" class="smoothScroll"><span>Kontakt</span></a></li>
+        </ul>
       </div>
 
     </div>
   </div>
-</section>
 
 
-<!-- About section -->
+  <!-- Home section -->
 
-<section id="about">
-  <div class="container">
-    <div class="row">
+  <section id="home">
+    <div class="overlay"></div>
+    <div class="container-fluid" style="padding-left: 50px; padding-right: 50px; position: relative; z-index: 10;">
+      <div class="row">
 
-      <div class="col-md-9 col-sm-8 wow fadeInUp" data-wow-delay="0.2s">
-        <div class="about-thumb">
-          <h1>Background</h1>
-          <p>Quisque tempor bibendum dolor at volutpat. Suspendisse venenatis quam sed libero euismod feugiat. In cursus nisi vitae lectus facilisis mollis. Nullam scelerisque, quam nec iaculis vulputate.</p>
+        <div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
+          <p class="wow fadeInUp" data-wow-delay="0.9s" style="color: #fff; font-size: 26px; font-weight: 400;">Lesní
+            družstvo pro Uherský Ostroh a okolí pečuje o krajinu, zajišťuje udržitelnou těžbu a nabízí kvalitní palivové
+            dřevo pro váš domov.</p>
+          <a href="#"
+            onclick="$('html, body').animate({ scrollTop: $('#sluzby').offset().top - $('.navbar-default').height() - 20 }, 1000); return false;"
+            class="btn btn-success btn-lg wow fadeInUp" data-wow-delay="1.2s">
+            Zjistit více
+          </a>
         </div>
-      </div>
-
-      <div class="col-md-3 col-sm-4 wow fadeInUp about-img" data-wow-delay="0.6s">
-        <img src="images/about-img.jpg" class="img-responsive img-circle" alt="About">
-      </div>
-
-      <div class="clearfix"></div>
-
-      <div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="section-title text-center">
-          <h1>Snapshot Team</h1>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
-        </div>
-      </div>
-
-      <!-- team carousel -->
-      <div id="team-carousel" class="owl-carousel">
-
-      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-        <div class="team-thumb">
-          <div class="image-holder">
-            <img src="images/team-img1.jpg" class="img-responsive img-circle" alt="Mary">
-          </div>
-          <h2 class="heading">Mary, CEO</h2>
-          <p class="description">Aliquam ac justo est. Praesent feugiat cursus est.</p>
-        </div>
-      </div>
-
-      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
-        <div class="team-thumb">
-          <div class="image-holder">
-            <img src="images/team-img2.jpg" class="img-responsive img-circle" alt="Jack">
-          </div>
-          <h2 class="heading">Jack, Founder</h2>
-          <p class="description">Maecenas sed diam eget risus varius blandit sit non.</p>
-        </div>
-      </div>
-
-      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
-        <div class="team-thumb">
-          <div class="image-holder">
-            <img src="images/team-img3.jpg" class="img-responsive img-circle" alt="Linda">
-          </div>
-          <h2 class="heading">Linda, Manager</h2>
-          <p class="description">Phasellus nec ante in nunc molestie tincidunt ut eu diam.</p>
-        </div>
-      </div>
-
-      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
-        <div class="team-thumb">
-          <div class="image-holder">
-            <img src="images/team-img4.jpg" class="img-responsive img-circle" alt="Sandy">
-          </div>
-          <h2 class="heading">Sandy, Director</h2>
-          <p class="description">Curabitur vulputate euismod neque et tincidunt.</p>
-        </div>
-      </div>
-
-      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
-        <div class="team-thumb">
-          <div class="image-holder">
-            <img src="images/team-img5.jpg" class="img-responsive img-circle" alt="Lukia">
-          </div>
-          <h2 class="heading">Lukia, Fashion</h2>
-          <p class="description">Maecenas sed diam eget risus varius blandit sit.</p>
-        </div>
-      </div>
-
-      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
-        <div class="team-thumb">
-          <div class="image-holder">
-            <img src="images/team-img6.jpg" class="img-responsive img-circle" alt="George">
-          </div>
-          <h2 class="heading">George, Admin</h2>
-          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-        </div>
-      </div>
-
-      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
-        <div class="team-thumb">
-          <div class="image-holder">
-            <img src="images/team-img7.jpg" class="img-responsive img-circle" alt="Day">
-          </div>
-          <h2 class="heading">Day, Accountant</h2>
-          <p class="description">Maecenas sed diam eget risus varius blandit sit.</p>
-        </div>
-      </div>
-
-      <div class="item col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.8s">
-        <div class="team-thumb">
-          <div class="image-holder">
-            <img src="images/team-img8.jpg" class="img-responsive img-circle" alt="Lynn">
-          </div>
-          <h2 class="heading">Lynn, Marketing</h2>
-          <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-        </div>
-      </div>
 
       </div>
-      <!-- end team carousel -->
-
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- Gallery section -->
+  <!-- About section -->
 
-<section id="gallery">
-  <div class="container">
-    <div class="row">
+  <section id="about" style="background: #ffffff; padding-top: 60px; padding-bottom: 60px;">
+    <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
 
-      <div class="col-md-offset-2 col-md-8 col-sm-12 wow fadeInUp" data-wow-delay="0.3s">
-        <div class="section-title">
-          <h1>Gallery</h1>
-          <p>Nullam scelerisque, quam nec iaculis vulputate, arcu ligula sollicitudin nisl, ac volutpat erat nulla a arcu.</p>
-        </div>
-      </div>
+      <div class="row row-middle">
 
-      <ul class="grid cs-style-4">
-        <li class="col-md-6 col-sm-6">
-          <figure>
-            <div><img src="images/gallery-img1.jpg" alt="image 1"></div>
-            <figcaption>
-              <h1>Sapien arcu</h1>
-              <small>Cum sociis natoque penatibus et magnis dis parturient montes.</small>
-              <a href="#">Read More</a>
-            </figcaption>
-          </figure>
-        </li>
-
-        <li class="col-md-6 col-sm-6">
-          <figure>
-            <div><img src="images/gallery-img2.jpg" alt="image 2"></div>
-            <figcaption>
-              <h1>Aliquam erat</h1>
-              <small>Suspendisse venenatis quam sed libero euismod feugiat.</small>
-              <a href="#">Details</a>
-            </figcaption>
-          </figure>
-        </li>
-
-        <li class="col-md-6 col-sm-6">
-          <figure>
-            <div><img src="images/gallery-img3.jpg" alt="image 3"></div>
-            <figcaption>
-              <h1>Cras ante sem</h1>
-              <small>Aenean urna massa, convallis vehicula velit et, dictum pellentesque nisi.</small>
-              <a href="#">Learn More</a>
-            </figcaption>
-          </figure>
-        </li>
-
-        <li class="col-md-6 col-sm-6">
-          <figure>
-            <div><img src="images/gallery-img4.jpg" alt="image 4"></div>
-            <figcaption>
-              <h1>Sed ornare</h1>
-              <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</small>
-              <a href="#">Full Post</a>
-            </figcaption>
-          </figure>
-        </li>
-      </ul>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- Contact section -->
-
-<section id="contact">
-  <div class="container">
-    <div class="row">
-
-       <div class="col-md-offset-1 col-md-10 col-sm-12">
-
-        <div class="col-lg-offset-1 col-lg-10 section-title wow fadeInUp" data-wow-delay="0.4s">
-          <h1>Send a message</h1>
-          <p>Nunc suscipit ante in lectus laoreet, nec pharetra diam dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-        </div>
-
-        <form action="#" method="post" class="wow fadeInUp" data-wow-delay="0.8s">
-          <div class="col-md-6 col-sm-6">
-            <input name="name" type="text" class="form-control" id="name" placeholder="Name">
-          </div>
-          <div class="col-md-6 col-sm-6">
-            <input name="email" type="email" class="form-control" id="email" placeholder="Email">
-          </div>
-          <div class="col-md-12 col-sm-12">
-            <textarea name="message" rows="6" class="form-control" id="message" placeholder="Message"></textarea>
-          </div>
-          <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-            <input type="submit" class="form-control" value="SEND MESSAGE">
-          </div>
-        </form>
-
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- Footer section -->
-
-<footer>
-	<div class="container">
-    
-		<div class="row">
-
-			<div class="col-md-12 col-sm-12">
+        <div class="col-md-4 col-sm-12 col-left-aligned wow fadeInUp" data-wow-delay="0.2s">
             
-                <ul class="social-icon"> 
-                    <li><a href="#" class="fa fa-facebook wow fadeInUp" data-wow-delay="0.2s"></a></li>
-                    <li><a href="#" class="fa fa-twitter wow fadeInUp" data-wow-delay="0.4s"></a></li>
-                    <li><a href="#" class="fa fa-linkedin wow fadeInUp" data-wow-delay="0.6s"></a></li>
-                    <li><a href="#" class="fa fa-instagram wow fadeInUp" data-wow-delay="0.8s"></a></li>
-                    <li><a href="#" class="fa fa-google-plus wow fadeInUp" data-wow-delay="1.0s"></a></li>
-                </ul>
+            <h1 style="font-weight: bold; color: #304352; margin-top: 0; margin-bottom: 15px; line-height: 1.2; padding-right: 0px;">
+              O družstvu
+            </h1>
+            
+            <i class="fa fa-users" style="font-size: 60px; color: #2e7d32; padding-right: 30px;"></i>
+            
+        </div>
 
-				<p class="wow fadeInUp"  data-wow-delay="1s" >Copyright &copy; 2016 Snapshot Studio | 
-                Design: <a href="https://plus.google.com/+templatemo" title="free css templates" target="_blank">Templatemo</a></p>
-                
-			</div>
-			
-		</div>
+        <div class="col-md-7 col-sm-12 col-right-aligned wow fadeInUp" data-wow-delay="0.4s">
+          
+          <p style="font-size: 19px; line-height: 1.6; color: #304352; font-weight: 600; margin-bottom: 25px; margin-top: 0; padding-left: 10px;">
+            Jsme sdružení vlastníků lesa s dlouholetou tradicí v regionu Uherského Ostrohu. 
+            Les nevnímáme jen jako zdroj dřeva, ale jako živý organismus, který je třeba předat dalším generacím v lepším stavu.
+          </p>
+
+          <p style="color: #666; font-size: 16px; line-height: 1.8; margin-bottom: 0; padding-left: 10px;">
+            Naším hlavním posláním je <strong>trvale udržitelné hospodaření</strong>.
+            V současné době spravujeme přes <strong>100 hektarů</strong> lesních porostů. 
+            Zajišťujeme kompletní pěstební činnost, ochranu proti škůdcům a prodej dřevní hmoty místním občanům.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Services section -->
+
+  <section id="sluzby" style="padding-top: 30px; padding-bottom: 60px; background-color: #f4f4f4;">
+    <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="section-title text-center" style="padding-bottom: 40px;">
+            <h1 style="font-weight: bold; color: #304352;">Naše služby</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row row-flex">
+
+        <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s" style="margin-bottom: 30px;">
+          <div class="about-thumb" style="background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid #2e7d32;">
+            
+            <div>
+                <i class="fa fa-tree" style="font-size: 50px; margin-bottom: 25px; color: #2e7d32;"></i>
+                <h2 style="margin-top: 0; color: #304352; font-weight: bold; font-size: 24px; margin-bottom: 20px;">Prodej dřeva</h2>
+                <p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+                  Nabízíme tvrdé rovnané palivové dříví – <strong>jasan, dub</strong>.
+                  <br><br>
+                  Délka: <strong>1 metr</strong>
+                  <br>
+                  Cena: <span style="color: #2e7d32; font-weight: bold; font-size: 18px;">1 500 Kč</span> / skládaný prostorový metr
+                </p>
+            </div>
+
+            <div class="push-down">
+                <hr style="border-top: 1px solid #eee; margin: 25px 0;">
+                <p style="margin-bottom: 5px; font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Více informací a objednávky:</p>
+                <a href="tel:+420737974499" style="font-size: 22px; font-weight: bold; color: #304352; text-decoration: none; transition: color 0.3s;">
+                  <i class="fa fa-phone" style="margin-right: 8px; color: #2e7d32;"></i> 737 974 499
+                </a>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.6s" style="margin-bottom: 30px;">
+          <div class="about-thumb" style="background: #ffffff; padding: 40px; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: center; border-bottom: 4px solid #2e7d32;">
+            
+            <div>
+                <i class="fa fa-building" style="font-size: 50px; margin-bottom: 25px; color: #2e7d32;"></i>
+                <h2 style="margin-top: 0; color: #304352; font-weight: bold; font-size: 24px; margin-bottom: 20px;">Pronájem areálu</h2>
+                <p style="font-size: 16px; color: #555; line-height: 1.6; margin-bottom: 20px;">
+                  Nabízíme možnost pronájmu prostor v našem areálu pro vaše soukromé i firemní akce.
+                  <br><br>
+                  Vhodné pro: <strong>oslavy, večírky, svatby</strong> a další společenská setkání.
+                  <br>
+                  <span style="color: #fff;">.</span>
+                </p>
+            </div>
+
+            <div class="push-down">
+                <hr style="border-top: 1px solid #eee; margin: 25px 0;">
+                <p style="margin-bottom: 5px; font-size: 14px; color: #888; text-transform: uppercase; letter-spacing: 1px;">Více informací a rezervace:</p>
+                <a href="tel:+420602503195" style="font-size: 22px; font-weight: bold; color: #304352; text-decoration: none; transition: color 0.3s;">
+                  <i class="fa fa-phone" style="margin-right: 8px; color: #2e7d32;"></i> 602 503 195
+                </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Gallery section -->
+
+  <section id="gallery" style="background: #ffffff; padding-top: 30px; padding-bottom: 30px;">
+    <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+
+      <div class="row">
+        <div class="col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="section-title text-center" style="padding-bottom: 40px;">
+            <h1 style="font-weight: bold; color: #304352;">Fotogalerie</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row wow fadeInUp" data-wow-delay="0.5s">
+
+        <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
+          <div class="gallery-item"
+            style="cursor: pointer; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;"
+            data-toggle="modal" data-target="#imageModal" onclick="showImage('images/stan2.jpg')">
+            <div style="overflow: hidden; border-radius: 4px;">
+              <img src="images/stan2.jpg" class="img-responsive"
+                style="width: 100%; transition: transform 0.5s ease;">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
+          <div class="gallery-item"
+            style="cursor: pointer; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;"
+            data-toggle="modal" data-target="#imageModal" onclick="showImage('images/kuchyn1.jpg')">
+            <div style="overflow: hidden; border-radius: 4px;">
+              <img src="images/kuchyn1.jpg" class="img-responsive"
+                style="width: 100%; transition: transform 0.5s ease;">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
+          <div class="gallery-item"
+            style="cursor: pointer; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;"
+            data-toggle="modal" data-target="#imageModal" onclick="showImage('images/kuchyn2.jpg')">
+            <div style="overflow: hidden; border-radius: 4px;">
+              <img src="images/kuchyn2.jpg" class="img-responsive"
+                style="width: 100%; transition: transform 0.5s ease;">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
+          <div class="gallery-item"
+            style="cursor: pointer; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;"
+            data-toggle="modal" data-target="#imageModal" onclick="showImage('images/zasedacka1.jpg')">
+            <div style="overflow: hidden; border-radius: 4px;">
+              <img src="images/zasedacka1.jpg" class="img-responsive"
+                style="width: 100%; transition: transform 0.5s ease;">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
+          <div class="gallery-item"
+            style="cursor: pointer; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;"
+            data-toggle="modal" data-target="#imageModal" onclick="showImage('images/zasedacka2.jpg')">
+            <div style="overflow: hidden; border-radius: 4px;">
+              <img src="images/zasedacka2.jpg" class="img-responsive"
+                style="width: 100%; transition: transform 0.5s ease;">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
+          <div class="gallery-item"
+            style="cursor: pointer; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;"
+            data-toggle="modal" data-target="#imageModal" onclick="showImage('images/venek2.jpg')">
+            <div style="overflow: hidden; border-radius: 4px;">
+              <img src="images/venek2.jpg" class="img-responsive"
+                style="width: 100%; transition: transform 0.5s ease;">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6" style="margin-bottom: 30px;">
+          <div class="gallery-item"
+            style="cursor: pointer; background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;"
+            data-toggle="modal" data-target="#imageModal" onclick="showImage('images/venek3.jpg')">
+            <div style="overflow: hidden; border-radius: 4px;">
+              <img src="images/venek3.jpg" class="img-responsive"
+                style="width: 100%; transition: transform 0.5s ease;">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact section -->
+
+  <section id="contact" style="background: #f4f4f4; padding-top: 60px; padding-bottom: 50px;">
+    <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+      <div class="row">
+
+        <div class="col-md-4 col-sm-12 wow fadeInUp" data-wow-delay="0.4s">
+
+          <div class="section-title" style="margin-bottom: 0 !important; padding-bottom: 10px !important;">
+            <h1 style="margin-bottom: 20px !important; color: #304352; font-weight: bold;">Kontakt</h1>
+          </div>
+
+          <div style="font-size: 16px; line-height: 1.8; margin-top: -1px;">
+
+            <div style="margin-bottom: 25px;">
+              <i class="fa fa-map-marker" style="color: #2e7d32; width: 25px; font-size: 20px;"></i> 
+              <strong style="color: #304352;">Sídlo družstva:</strong><br>
+              <div style="padding-left: 28px; color: #555;">
+                Ve Dvoře 308<br>
+                687 24 Uherský Ostroh<br>
+                Ostrožské Předměstí
+              </div>
+            </div>
+
+            <div style="margin-bottom: 25px;">
+              <i class="fa fa-user" style="color: #2e7d32; width: 25px; font-size: 18px;"></i> 
+              <strong style="color: #304352;">Odpovědná osoba:</strong><br>
+              <div style="padding-left: 28px; color: #555;">
+                Pavel Fianta<br>
+                <a href="tel:+420602503195" style="display: block; margin-top: 5px; text-decoration: none; color: #304352; font-weight: bold; font-size: 20px;">
+                  <i class="fa fa-phone" style="color: #2e7d32; margin-right: 8px;"></i> 602 503 195
+                </a>
+              </div>
+            </div>
+
+            <div>
+              <i class="fa fa-envelope" style="color: #2e7d32; width: 25px; font-size: 18px;"></i> 
+              <strong style="color: #304352;">Email:</strong><br>
+              <div style="padding-left: 28px;">
+                <span style="color: #999; font-style: italic;"></span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-8 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
+          <div style="background: #fff; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            <iframe 
+              src="https://maps.google.com/maps?q=Ve+Dvoře+308,+Uherský+Ostroh&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+              width="100%" height="400" frameborder="0" style="border:0; border-radius: 4px;" 
+              allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer section -->
+
+  <footer style="padding-top: 20px; padding-bottom: 20px; background: #304352; color: #fff;">
+    <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+
+      <div class="row">
+
+        <div class="col-md-12 col-sm-12">
+
+          <ul class="social-icon" style="margin-top: 0; margin-bottom: 0;">
+             <li><a href="https://www.facebook.com/profile.php?id=61553352934307" class="fa fa-facebook wow fadeInUp" data-wow-delay="0.2s" style="color: #fff; border-color: #fff;"></a></li>
+          </ul>
+
+          <p class="wow fadeInUp" data-wow-delay="1s" style="margin: 0;">
+            Copyright © 2025 Lesní družstvo pro Uh. Ostroh a okolí |
+            <span style="font-size: 0.8em; opacity: 0.6;"> Design: <a target="_blank" style="color: #ccc;">Templatemo & PF</a></span>
+            <br />
+            <a href="gdpr.html" style="color: #ccc; font-size: 13px; font-weight: bold;" class="footer-link">Ochrana osobních údajů</a>
+            <span style="color: #ccc;"> | </span>
+            <a href="login.html" style="color: #ccc; font-size: 13px; font-weight: bold;" class="footer-link">Členská sekce</a>
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Back top -->
+  <a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+  <!-- Javascript  -->
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/vegas.min.js"></script>
+  <script src="js/modernizr.custom.js"></script>
+  <script src="js/toucheffects.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script src="js/custom.js"></script>
+
+  <div id="cookie-bar" style="
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    z-index: 9999;
+    display: none;
+    font-size: 14px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);">
+
+    <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+      Tento web používá k poskytování služeb a analýze návštěvnosti soubory cookie.
+      Používáním tohoto webu s tím souhlasíte.
+      <a href="gdpr.html" style="color: #81c784; text-decoration: underline;">Více informací</a>
+
+      <button id="accept-cookies" style="
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            margin-left: 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;">
+        Rozumím
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Funkce pro kontrolu cookies
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!localStorage.getItem("cookieConsent")) {
+        document.getElementById("cookie-bar").style.display = "block";
+      }
+
+      document.getElementById("accept-cookies").addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "true");
+        document.getElementById("cookie-bar").style.display = "none";
+      });
+    });
+  </script>
+
+  <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" style="margin-top: 50px;">
+      <div class="modal-content" style="background: transparent; box-shadow: none; border: none; position: relative;">
+
+        <div class="modal-body text-center" style="padding: 0; position: relative;">
+          
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+            style="position: absolute; right: -25px; top: -30px; color: #fff; font-size: 40px; opacity: 1; text-shadow: none; z-index: 1060;">
+            &times;
+          </button>
+
+          <a class="modal-nav-btn modal-prev" onclick="changeImage(-1)">&#10094;</a>
+
+          <img id="modalImage" src="" alt="Velký náhled"
+            style="width: auto; max-width: 100%; max-height: 85vh; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+
+          <a class="modal-nav-btn modal-next" onclick="changeImage(1)">&#10095;</a>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // 1. Pole pro uložení všech fotek z galerie
+    var galleryImages = [];
+    var currentIndex = 0;
+
+    // 2. Po načtení stránky automaticky posbíráme všechny src fotek
+    $(document).ready(function() {
+        // Najde všechny obrázky uvnitř divů s třídou .gallery-item
+        $('.gallery-item img').each(function() {
+            galleryImages.push($(this).attr('src'));
+        });
+    });
+
+    // 3. Funkce pro otevření konkrétní fotky (volá se kliknutím na náhled)
+    function showImage(src) {
+        // Najdeme index této fotky v našem poli
+        currentIndex = galleryImages.indexOf(src);
         
-	</div>
-</footer>
+        // Pokud se náhodou nenašla (např. chyba v názvu), dáme první
+        if (currentIndex === -1) currentIndex = 0;
 
-<!-- Back top -->
-<a href="#" class="go-top"><i class="fa fa-angle-up"></i></a>
+        updateModal();
+    }
 
-<!-- Javascript  -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/vegas.min.js"></script>
-<script src="js/modernizr.custom.js"></script>
-<script src="js/toucheffects.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/custom.js"></script>
+    // 4. Funkce pro změnu fotky (tlačítka šipek)
+    function changeImage(step) {
+        currentIndex += step;
+
+        // Smyčka: Když jsme na konci, skočíme na začátek a naopak
+        if (currentIndex >= galleryImages.length) {
+            currentIndex = 0;
+        } else if (currentIndex < 0) {
+            currentIndex = galleryImages.length - 1;
+        }
+
+        updateModal();
+    }
+
+    // 5. Aktualizace obrázku v modálním okně
+    function updateModal() {
+        var imgElement = document.getElementById('modalImage');
+        
+        // Prostě jen vyměníme zdroj. Žádné stmívání = žádné problikávání.
+        imgElement.src = galleryImages[currentIndex];
+    }
+
+    // 6. Ovládání klávesnicí (Šipky Vlevo / Vpravo)
+    document.addEventListener('keydown', function(event) {
+        // Reaguje jen když je modal otevřený (má třídu 'in' v Bootstrapu 3)
+        if ($('#imageModal').hasClass('in')) {
+            if (event.key === "ArrowLeft") {
+                changeImage(-1);
+            } else if (event.key === "ArrowRight") {
+                changeImage(1);
+            }
+        }
+    });
+  </script>
 
 </body>
+
 </html>

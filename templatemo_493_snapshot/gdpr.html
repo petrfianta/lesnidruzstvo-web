@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/icon2-big.png">
+    <title>Ochrana osobních údajů | LD Uherský Ostroh</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,300' rel='stylesheet' type='text/css'>
+
+    <style>
+        body {
+            font-family: "Source Sans Pro", sans-serif;
+            background-color: #ffffff;
+            color: #304352;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- TLAČÍTKO ZPĚT V MENU (Header) --- */
+        .navbar-default .navbar-nav > li > a.back-btn {
+            background-color: #304352 !important;
+            color: #ffffff !important;
+            border: none;
+            padding: 10px 25px !important;
+            border-radius: 4px;
+            font-weight: 900 !important;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            margin-top: 5px;
+            display: inline-block;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            opacity: 1 !important;
+        }
+
+        .navbar-default .navbar-nav > li > a.back-btn:hover {
+            background-color: #2e7d32 !important;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(46, 125, 50, 0.3);
+        }
+
+        /* --- ODKAZ DOLE (Footer content) - NOVÉ --- */
+        .bottom-link {
+            color: #2e7d32;            /* Základní zelená */
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+        
+        .bottom-link:hover {
+            color: #304352;            /* Po najetí ztmavne na tmavě modrou */
+            text-decoration: underline;
+        }
+
+        /* Hlavička */
+        .navbar-default {
+            background-color: #ffffff;
+            border-bottom: 3px solid #304352;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Obsah */
+        .content-section {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            flex: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 { font-size: 36px; font-weight: bold; color: #304352; margin-bottom: 30px; }
+        h2 { font-size: 24px; font-weight: bold; color: #2e7d32; margin-top: 40px; margin-bottom: 20px; }
+        p, li { font-size: 18px; line-height: 1.8; color: #555; }
+        strong { color: #304352; }
+
+        /* Patička */
+        footer {
+            background: #304352;
+            color: #fff;       /* Bílé písmo */
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-brand img { height: 40px !important; margin-top: -5px !important; }
+            .content-section { padding-left: 20px; padding-right: 20px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid" style="padding-left: 50px; padding-right: 50px;">
+            <div class="navbar-header">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo2-bg.png" alt="Lesní družstvo" style="height: 55px; width: auto; margin-top: -15px;">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html" class="back-btn">Zpět na web</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section class="content-section">
+        <h1>Zásady ochrany osobních údajů</h1>
+        
+        <p>Vážení návštěvníci a členové,</p>
+        <p>Lesní družstvo pro Uh. Ostroh a okolí (dále jen "Správce") dbá na ochranu vašich osobních údajů v souladu s platnou legislativou (GDPR).</p>
+
+        <h2>1. Kdo je správcem údajů?</h2>
+        <p>
+            <strong>Název:</strong> Lesní družstvo pro Uh. Ostroh a okolí<br>
+            <strong>Sídlo:</strong> Ve Dvoře 308, 687 24 Uherský Ostroh<br>
+            <strong>Kontakt:</strong> 
+        </p>
+
+        <h2>2. Jaké údaje sbíráme a proč?</h2>
+        <p>Prostřednictvím webových stránek nesbíráme žádná citlivá data. Pokud nás kontaktujete e-mailem nebo telefonicky, zpracováváme vaše údaje pouze za účelem vyřízení vašeho požadavku.</p>
+
+        <h2>3. Soubory Cookies</h2>
+        <p>Tento web používá pouze nezbytné technické soubory cookies pro zajištění správné funkčnosti stránek. Nepoužíváme žádné marketingové ani sledovací nástroje třetích stran.</p>
+
+        <h2>4. Vaše práva</h2>
+        <p>Máte právo požadovat informaci, jaké vaše osobní údaje zpracováváme, vyžádat si přístup k těmto údajům, nechat je aktualizovat nebo opravit, popřípadě požadovat výmaz těchto osobních údajů.</p>
+
+        <hr style="margin-top: 50px; margin-bottom: 30px; border-top: 1px solid #ddd;">
+        
+        <p>
+            <a href="index.html" class="bottom-link">&larr; Zpět na hlavní stránku</a>
+        </p>
+    </section>
+
+    <footer>
+        <div class="container-fluid">
+            <p style="margin: 0; font-size: 14px; color: #fff;">
+                Copyright © 2025 Lesní družstvo pro Uh. Ostroh a okolí
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
